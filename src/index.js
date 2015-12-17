@@ -1,17 +1,16 @@
-import Task from 'data.task';
 
 
-// futurizeP :: CPS -> ( ...args -> Task )
-export const futurize = fn => function (...args) {
-  return new Task((rej, res) =>
+// futurizeP :: Constructor -> CPS -> ( ...args -> Future )
+export const futurize = Future => fn => function (...args) {
+  return new Future((rej, res) =>
     fn(...args, (err, result) => err? rej(err): res(result))
   );
 };
 
 
-// futurizeP :: Promise -> ( ...args -> Task )
-export const futurizeP = fn => function (...args) {
-  return new Task((rej, res) =>
+// futurizeP :: Constructor -> Promise -> ( ...args -> Future )
+export const futurizeP = Future => fn => function (...args) {
+  return new Future((rej, res) =>
     fn(...args).then(res, rej)
   );
 };
