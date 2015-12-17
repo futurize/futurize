@@ -1,7 +1,8 @@
 import { readFile } from 'fs'
 import { futurize } from './';
+import { Future } from 'ramda-fantasy';
 
-const read = futurize(readFile);
+const read = futurize(Future)(readFile);
 
 function decode(buffer) {
   return buffer.map(a => a.toString('utf-8'));

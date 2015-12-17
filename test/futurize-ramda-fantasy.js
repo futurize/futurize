@@ -1,11 +1,9 @@
 import expect from 'expect';
-import Promise from 'pinkie-promise';
-import Task from 'data.task';
-import { futurizeP } from '../src';
+import { Future } from 'ramda-fantasy';
+import { futurize } from '../src';
 
 
-const future = futurizeP(Task);
-
+const future = futurize(Future);
 
 const _ = () => expect(true).toNotBe(false);
 const eventuallyEqual = (expected, done) => res => {
@@ -13,28 +11,24 @@ const eventuallyEqual = (expected, done) => res => {
   done();
 };
 
-describe('#futurize-promise', () => {
+describe('#futurize-cps', () => {
 
   function time (text, cb) {
-    return new Promise((res, rej) =>
-      setTimeout(() => res(text), 100)
-    );
+    setTimeout(() => cb(null, text), 100);
   }
 
   function erroring (text, cb) {
-    return new Promise((res, rej) =>
-      setTimeout(() => rej(text), 100)
-    );
+    setTimeout(() => cb(text), 100);
   }
 
-  it('should create a future from a promise and resolve', done => {
+  it('should create a future from a CPS-function and resolve', done => {
     const futurized = future(time);
     const task = futurized('test');
 
     task.fork(_, eventuallyEqual('test', done));
   });
 
-  it('should create a future from a promise and reject', done => {
+  it('should create a future from a CPS-function and reject', done => {
     const futurized = future(erroring);
     const task = futurized('test');
 

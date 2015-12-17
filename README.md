@@ -13,9 +13,15 @@ Example
 
 ```js
 import { futurize } from 'futurize';
+import { Future } from 'ramda-fantasy';
+// or
+import Task from 'data.task';
+
+const future = futurize(Future); // or futurize(Task);
+
 import { readFile } from 'fs'
 
-const read = futurize(readFile);
+const read = future(readFile);
 
 function decode(buffer) {
   return buffer.map(a => a.toString('utf-8'));
@@ -36,9 +42,12 @@ concatenated.fork(
 
 ```js
 import { futurizeP } from 'futurize';
+import Task from 'data.task';
 import myPromisedFunction from 'a-module';
 
-const myFuturizedFunction = futurizeP(myPromisedFunction);
+const future = futurize(Future); // or futurize(Task);
+
+const myFuturizedFunction = future(myPromisedFunction);
 ```
 
 
