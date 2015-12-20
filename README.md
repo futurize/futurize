@@ -6,6 +6,19 @@ futurize
 
 > Turn callback-style functions or promises into futures
 
+```diff
+-function read(path) {
+-  return new Future(function(reject, resolve) {
+-    fs.readFile(path, function(error, data) {
+-      if (error)  reject(error)
+-      else        resolve(data)
+-    })
+-  })
+-}
+
++const read = futurize(Future)(fs.readFile);
+```
+
 Example
 -------
 
