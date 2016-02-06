@@ -64,6 +64,17 @@ const myFuturizedFunction = future(myPromisedFunction);
 ```
 
 
+## API
+
+```hs
+futurize :: Constructor -> CPS -> ( ...args -> Future )
+```
+
+```hs
+futurizeP :: Constructor -> Promise -> ( ...args -> Future )
+```
+
+
 
 ## License
 
