@@ -4,14 +4,13 @@
   "description": "Turn callback-style functions or promises into futures",
   "main": "index.js",
   "scripts": {
-    "test": "babel-node node_modules/isparta/bin/isparta cover --excludes 'example/readFile.js' --include-all-sources --report lcov --report html node_modules/mocha/bin/_mocha -- --require babel-core/register",
+    "test": "babel-node node_modules/isparta/bin/isparta cover --include-all-sources --report lcov --report html node_modules/mocha/bin/_mocha -- --require babel-core/register",
     "codecov": "npm run test && codecov",
     "prepublish": "npm run transpile",
     "patch-release": "npm version patch && npm publish && git push --follow-tags && npm run clean",
     "minor-release": "npm version minor && npm publish && git push --follow-tags && npm run clean",
     "major-release": "npm version major && npm publish && git push --follow-tags && npm run clean",
     "transpile": "babel src --out-dir .",
-    "example": "npm run transpile && babel example --out-dir . && node readFile.js && npm run clean",
     "clean": "rm *.js"
   },
   "repository": {

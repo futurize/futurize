@@ -17,4 +17,3 @@ coverage
 *.js
 !src/*.js
 !test/*.js
-!example/*.js
