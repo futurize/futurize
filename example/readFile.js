@@ -1,3 +1,4 @@
+/* istanbul ignore next */
 import { readFile } from 'fs'
 import { futurize } from './';
 import { Future } from 'ramda-fantasy';
