@@ -33,7 +33,7 @@
   ],
   "homepage": "https://github.com/stoeffel/futurize#readme",
   "devDependencies": {
-    "babel": "6.5.1",
+    "babel": "6.5.2",
     "babel-cli": "6.5.1",
     "babel-core": "6.5.1",
     "babel-preset-es2015": "6.5.0",
