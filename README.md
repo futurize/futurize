@@ -1,9 +1,9 @@
 futurize
 ========
 
-[![build status](https://img.shields.io/travis/stoeffel/futurize/master.svg?style=flat-square)](https://travis-ci.org/stoeffel/futurize)
+[![build status](https://img.shields.io/travis/futurize/futurize/master.svg?style=flat-square)](https://travis-ci.org/futurize/futurize)
 [![npm version](https://img.shields.io/npm/v/futurize.svg?style=flat-square)](https://www.npmjs.com/package/futurize)
-[![codecov.io](https://codecov.io/github/stoeffel/futurize/coverage.svg?branch=master)](https://codecov.io/github/stoeffel/futurize?branch=master)
+[![codecov.io](https://codecov.io/github/futurize/futurize/coverage.svg?branch=master)](https://codecov.io/github/futurize/futurize?branch=master)
 
 > Turn callback-style functions or promises into futures
 
