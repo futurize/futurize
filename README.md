@@ -56,10 +56,12 @@ concatenated.fork(
 
 ```js
 import { futurizeP } from 'futurize';
+import { Future } from 'ramda-fantasy';
+// or
 import Task from 'data.task';
 import myPromisedFunction from 'a-module';
 
-const future = futurize(Future); // or futurize(Task);
+const future = futurizeP(Future); // or futurizeP(Task);
 
 const myFuturizedFunction = future(myPromisedFunction);
 ```
