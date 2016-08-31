@@ -3,7 +3,7 @@
 // futurize :: Constructor -> CPS -> ( ...args -> Future )
 export const futurize = Future => fn => function (...args) {
   return new Future((rej, res) =>
-    fn(...args, (err, result) => err? rej(err): res(result))
+    void fn(...args, (err, result) => err? rej(err): res(result))
   );
 };
 
@@ -11,6 +11,6 @@ export const futurize = Future => fn => function (...args) {
 // futurizeP :: Constructor -> Promise -> ( ...args -> Future )
 export const futurizeP = Future => fn => function (...args) {
   return new Future((rej, res) =>
-    fn(...args).then(res, rej)
+    void fn(...args).then(res, rej)
   );
 };
