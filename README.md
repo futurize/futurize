@@ -52,6 +52,22 @@ concatenated.fork(
 );
 ```
 
+### Futurize a callback with multiple arguments
+
+```js
+import { futurizeV } from 'futurize';
+import { Future } from 'ramda-fantasy';
+
+const futureV = futurizeV(Future);
+
+const read = futureV(fs.read);
+
+read(fs.openSync('package.json', 'r'), new Buffer([]), 0, 2, 0)
+.fork(console.error, ([bytesRead, buf]) => {
+  console.log(buf.toString('utf8'));
+});
+```
+
 ### Futurize a promise
 
 ```js
