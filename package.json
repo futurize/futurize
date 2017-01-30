@@ -7,9 +7,7 @@
     "test": "babel-node node_modules/isparta/bin/isparta cover --include-all-sources --report lcov --report html node_modules/mocha/bin/_mocha -- --require babel-core/register",
     "codecov": "npm run test && codecov",
     "prepublish": "npm run transpile",
-    "patch-release": "npm version patch && npm publish && git push --follow-tags && npm run clean",
-    "minor-release": "npm version minor && npm publish && git push --follow-tags && npm run clean",
-    "major-release": "npm version major && npm publish && git push --follow-tags && npm run clean",
+    "release": "xyz --repo git@github.com:futurize/futurize.git --increment",
     "transpile": "babel src --out-dir .",
     "clean": "rm *.js"
   },
@@ -45,6 +43,7 @@
     "mocha": "2.4.5",
     "mocha-lcov-reporter": "1.2.0",
     "pinkie-promise": "2.0.0",
-    "ramda-fantasy": "0.6.0"
+    "ramda-fantasy": "0.6.0",
+    "xyz": "^2.1.0"
   }
 }
