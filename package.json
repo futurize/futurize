@@ -43,7 +43,7 @@
     "mocha": "2.4.5",
     "mocha-lcov-reporter": "1.2.0",
     "pinkie-promise": "2.0.0",
-    "ramda-fantasy": "0.6.0",
+    "ramda-fantasy": "0.8.0",
     "xyz": "^2.1.0"
   }
 }
